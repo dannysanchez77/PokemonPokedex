@@ -67,14 +67,23 @@
                               </ProgressBar>
                            </children>
                         </HBox>
-                        <Label fx:id="Ps00" text="Label" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox>
+                           <children>
+                              <Label fx:id="Ps00" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fav00" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../../../kotlin/com/example/poke/Pokemones/fav.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </bottom>
@@ -141,14 +150,23 @@
                               </ProgressBar>
                            </children>
                         </HBox>
-                        <Label fx:id="Ps10" text="Label" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox>
+                           <children>
+                              <Label fx:id="Ps10" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fav10" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../../../kotlin/com/example/poke/Pokemones/fav.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </bottom>
@@ -215,14 +233,23 @@
                               </ProgressBar>
                            </children>
                         </HBox>
-                        <Label fx:id="Ps01" text="Label" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox>
+                           <children>
+                              <Label fx:id="Ps01" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fav01" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../../../kotlin/com/example/poke/Pokemones/fav.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </bottom>
@@ -289,14 +316,23 @@
                               </ProgressBar>
                            </children>
                         </HBox>
-                        <Label fx:id="Ps11" text="Label" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox>
+                           <children>
+                              <Label fx:id="Ps11" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fav11" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../../../kotlin/com/example/poke/Pokemones/fav.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </bottom>
@@ -363,14 +399,23 @@
                               </ProgressBar>
                            </children>
                         </HBox>
-                        <Label fx:id="Ps20" text="Label" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox>
+                           <children>
+                              <Label fx:id="Ps20" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fav20" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../../../kotlin/com/example/poke/Pokemones/fav.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </bottom>
@@ -437,14 +482,23 @@
                               </ProgressBar>
                            </children>
                         </HBox>
-                        <Label fx:id="Ps21" text="Label" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets left="10.0" />
-                           </VBox.margin>
-                        </Label>
+                        <HBox>
+                           <children>
+                              <Label fx:id="Ps21" text="Label" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="fav21" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../../../kotlin/com/example/poke/Pokemones/fav.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
                      </children>
                   </VBox>
                </bottom>

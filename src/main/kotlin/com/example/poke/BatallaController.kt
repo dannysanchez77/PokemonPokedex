@@ -33,6 +33,7 @@ class BatallaController {
         200,
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\blasto.gif"),
         "",
+        File(""),
         File("")
     )
     val pokemonRival2 = Pokemon(
@@ -44,6 +45,7 @@ class BatallaController {
         200,
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\charizard.gif"),
         "",
+        File(""),
         File(""))
     val pokemonRival3 = Pokemon(
         "Incineroar",
@@ -55,6 +57,7 @@ class BatallaController {
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\incineroar.gif"),
 
         "",
+        File(""),
         File(""))
     val pokemonRival4 = Pokemon(
         "Archeops",
@@ -66,6 +69,7 @@ class BatallaController {
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\archeops.gif"),
 
         "",
+        File(""),
         File(""))
     // FONDO
     @FXML private lateinit var fondoBatalla: ImageView

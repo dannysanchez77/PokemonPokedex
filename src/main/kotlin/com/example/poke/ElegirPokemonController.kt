@@ -27,7 +27,8 @@ class ElegirPokemonController {
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\groudon_espalda.gif"),
         "Groudon es el Pokémon Continente. Los Groudon son de tipo tierra y de color rojo.\n" +
                 "A Groudon siempre se le ha descrito en mitología como el Pokémon que elevó la tierra y expandió los continentes. Tras un combate contra Kyogre que acabó en cataclismo, se echó a dormir.",
-        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\groudonPrimal.gif")
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\groudonPrimal.gif"),
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\fav.png")
     )
     val pokemonAmigo2 = Pokemon("Venusaur",
         70,
@@ -39,7 +40,8 @@ class ElegirPokemonController {
         "Venusaur es el Pokémon Semilla. Los Venusaur son de tipos planta veneno y de color verde.\n" +
                 "Venusaur tiene una flor enorme en el lomo que, según parece, adquiere unos colores muy vivos si está bien nutrido y le da mucho el sol. " +
                 "El aroma delicado de la flor tiene un efecto relajante en el ánimo de las personas." ,
-        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\venusaurMega.gif"))
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\venusaurMega.gif"),
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\fav.png"))
     val pokemonAmigo3 = Pokemon("Torkoal",
         70,
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\torkoal.gif"),
@@ -51,7 +53,8 @@ class ElegirPokemonController {
                 "Torkoal va cavando por las montañas en busca de carbón. " +
                 "Cuando lo encuentra, rellena los huecos que tiene dentro del caparazón y lo quema." +
                 " Si le atacan, este Pokémon echa un humo negro que le permite la retirada.",
-        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\ssss.png"))
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\ssss.png"),
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\fav.png"))
     val pokemonAmigo4 = Pokemon("Electivire",
         70,
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\electivire.gif"),
@@ -62,7 +65,8 @@ class ElegirPokemonController {
         "Electivire es el Pokémon Rayo. Los Electivire son de tipo electrico y de color amarillo.\n" +
                 "Toca a su enemigo con las puntas de sus dos colas y les suelta una descarga de más de 20000 voltios. " +
                 "Ignora los ataques del enemigo y se acerca para clavarle las colas y darle una descarga de alto voltaje.",
-        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\ssss.png"))
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\ssss.png"),
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\fav.png"))
     val pokemonAmigo5 = Pokemon("Sharpedo",
         70,
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\sharpedo.gif"),
@@ -72,7 +76,8 @@ class ElegirPokemonController {
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\sharpedo_espalda.gif"),
         "Sharpedo es el Pokémon Voraz. Los Sharpedo son de tipos agua siniestro y de color azul.\n" +
                 "Conocido como ``el terror de los mares', Sharpedo es temido por todos. Si este Pokémon pierde las escalofriantes mandíbulas que tiene, las recupera en breve. Basta con un Sharpedo para destrozar un buque-cisterna.",
-        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\sharpedoMega.gif"))
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\sharpedoMega.gif"),
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\fav.png"))
     val pokemonAmigo6 = Pokemon("Swampert",
         70,
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\swampert.gif"),
@@ -82,7 +87,8 @@ class ElegirPokemonController {
         File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\swampert_espalda.gif"),
         "Swampert es el Pokémon Pez Lodo. Los Swampert son de tipos agua tierra y de color azul.\n" +
                 "Swampert es muy fuerte. Puede arrastrar una roca que pese más de 1 tonelada sin ningún problema. Este Pokémon tiene el sentido de la vista muy desarrollado. Es capaz de ver hasta en aguas cenagosas.",
-        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\swampertMega.gif"))
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\swampertMega.gif"),
+        File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\fav.png"))
 
 
 
@@ -137,19 +143,29 @@ class ElegirPokemonController {
     @FXML private lateinit var Ps11 : Label
     @FXML private lateinit var Ps21 : Label
 
+    @FXML private lateinit var fav00 : ImageView
+    @FXML private lateinit var fav10 : ImageView
+    @FXML private lateinit var fav20 : ImageView
+    @FXML private lateinit var fav01 : ImageView
+    @FXML private lateinit var fav11 : ImageView
+    @FXML private lateinit var fav21 : ImageView
+
     @FXML private lateinit var elegir : Button
     @FXML private lateinit var Estadisticas : Button
 
     private fun calcularBarraVida(poke: Pokemon): Double{
         return poke.vidaActual.toDouble()/poke.vidaMaxima
     }
-    fun configurarPoke(nombre: Label, nivel:Label, imagen: ImageView, genero:ImageView, vida:ProgressBar, ps:Label, poke:Pokemon,  ){
+    fun configurarPoke(
+        nombre: Label, nivel:Label, imagen: ImageView, genero:ImageView, vida:ProgressBar, ps:Label,
+        favorito: Unit, poke:Pokemon,  ){
         nombre.text=poke.Nombre
         nivel.text="Nv "+poke.Nv
         imagen.image = Image(poke.imagen.toURI().toString())
         genero.image= Image(poke.genero.toURI().toString())
         vida.progress = calcularBarraVida(poke)
         ps.text=poke.vidaActual.toString()+'/'+poke.vidaMaxima
+       favorito.toString()
         imagen.image = Image(poke.imagen.toURI().toString())
 
     }
@@ -181,12 +197,14 @@ class ElegirPokemonController {
 
         elegir.disableProperty().set(true)
 
-        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,pokemonAmigo[0])
-        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,pokemonAmigo[1])
-        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,pokemonAmigo[2])
-        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,pokemonAmigo[3])
-        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,pokemonAmigo[4])
-        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,pokemonAmigo[5])
+
+        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,fav00.visibleProperty().set(false),pokemonAmigo[0])
+        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,fav10.visibleProperty().set(false),pokemonAmigo[1])
+        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,fav20.visibleProperty().set(false),pokemonAmigo[2])
+        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,fav01.visibleProperty().set(false),pokemonAmigo[3])
+        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,fav11.visibleProperty().set(false),pokemonAmigo[4])
+        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,fav21.visibleProperty().set(false),pokemonAmigo[5])
+
 
 
     }
@@ -250,7 +268,7 @@ class ElegirPokemonController {
         elegir.disableProperty().set(false)
         elegirLuchador=pokemonAmigo6
     }
-// AL CLICKAR EL BOTON NOS VAMOS A LA SIGUIENTE PANTALLA
+    // AL CLICKAR EL BOTON NOS VAMOS A LA SIGUIENTE PANTALLA
     var stage: Stage? = null
     @FXML fun elegirPulsado() {
         elegir.disableProperty().set(true)
@@ -276,32 +294,42 @@ class ElegirPokemonController {
     }
     // FUNCION PARA PODER ACTUALIZAR LOS DATOS OBTENIDOS DE LA BATALLA
     fun actualizarDatos() {
-        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,pokemonAmigo[0])
-        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,pokemonAmigo[1])
-        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,pokemonAmigo[2])
-        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,pokemonAmigo[3])
-        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,pokemonAmigo[4])
-        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,pokemonAmigo[5])
-
+        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,fav00.visibleProperty().set(false),pokemonAmigo[0])
+        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,fav10.visibleProperty().set(false),pokemonAmigo[1])
+        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,fav20.visibleProperty().set(false),pokemonAmigo[2])
+        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,fav01.visibleProperty().set(false),pokemonAmigo[3])
+        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,fav11.visibleProperty().set(false),pokemonAmigo[4])
+        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,fav21.visibleProperty().set(false),pokemonAmigo[5])
+    }
+    fun actualizarfavoritos() {
+        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,fav00.visibleProperty().set(true),pokemonAmigo[0])
+        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,fav10.visibleProperty().set(true),pokemonAmigo[1])
+        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,fav20.visibleProperty().set(true),pokemonAmigo[2])
+        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,fav01.visibleProperty().set(true),pokemonAmigo[3])
+        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,fav11.visibleProperty().set(true),pokemonAmigo[4])
+        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,fav21.visibleProperty().set(true),pokemonAmigo[5])
+        println("estrella")
+        println(fav00.visibleProperty())
     }
 
 
     fun pokedexClick() {
-            try {
-                if (stage == null) {
-                    val stage = Stage()
-                    val loader = FXMLLoader(PokeApplication::class.java.getResource("pokedex.fxml"))
-                    val scene = Scene(loader.load(), 400.0, 500.0)
-                    stage.title = "Pokemon"
-                    stage.scene = scene
-                    stage.isResizable = false
-                    stage.show()
-                    var controllerPokedex = loader.getController<PokedexController>()
-                    controllerPokedex.traerEleccion(elegirLuchador)
-                }
-            } catch (e: IOException) {
-                e.printStackTrace()
+        try {
+            if (stage == null) {
+                val stage = Stage()
+                val loader = FXMLLoader(PokeApplication::class.java.getResource("pokedex.fxml"))
+                val scene = Scene(loader.load(), 400.0, 500.0)
+                stage.title = "Pokemon"
+                stage.scene = scene
+                stage.isResizable = false
+                stage.show()
+                var controllerPokedex = loader.getController<PokedexController>()
+                controllerPokedex.traerEleccion(elegirLuchador)
+                controllerPokedex.hacerFavoritos(this)
             }
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
+    }
 }
 

@@ -11,7 +11,7 @@ import java.io.File
 import kotlin.system.exitProcess
 
 class PokedexController {
-
+    var hacerFavoritos = ElegirPokemonController()
 lateinit var miPokedex : Pokemon
 
     @FXML private lateinit var fondoPokedex : ImageView
@@ -23,10 +23,12 @@ lateinit var miPokedex : Pokemon
     @FXML private lateinit var favorito : Label
     @FXML private lateinit var salir : Label
     @FXML private lateinit var  nombrePokedex: Label
+    @FXML private lateinit var  estrella: ImageView
 
     fun initialize() {
         fondoPokedex.image = Image(File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\fondoPokedex.jpg").toURI().toString())
         flecha.image = Image(File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\next.png").toURI().toString())
+        estrella.visibleProperty().set(false)
     }
     fun traerEleccion(elegirLuchador: Pokemon) {
         pokemonPokedex.image = Image(elegirLuchador.imagen.toURI().toString())
@@ -34,6 +36,7 @@ lateinit var miPokedex : Pokemon
         informacion.text = elegirLuchador.descripcion
         preEvo.image = Image(elegirLuchador.imagen.toURI().toString())
         Evo.image = Image(elegirLuchador.evolucion.toURI().toString())
+        estrella.image = Image(elegirLuchador.estrella.toURI().toString())
         miPokedex = elegirLuchador
     }
     @FXML private fun salirClick(){
@@ -41,7 +44,13 @@ lateinit var miPokedex : Pokemon
 
     }
     @FXML private fun favoritoClick(){
-
+      estrella.visibleProperty().set(true)
+        hacerFavoritos.actualizarfavoritos()
     }
 
+    fun hacerFavoritos( controlador: ElegirPokemonController){
+        this.hacerFavoritos=controlador
+    }
 }
+
+
