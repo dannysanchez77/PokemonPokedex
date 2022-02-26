@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.poke.PokedexController">
+   <children>
+      <ImageView fx:id="fondoPokedex" fitHeight="500.0" fitWidth="400.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../kotlin/com/example/poke/Pokemones/fondo.jpg" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="368.0" prefWidth="400.0">
+         <children>
+            <ImageView fx:id="pokemonPokedex" fitHeight="200.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../kotlin/com/example/poke/Pokemones/swampert.gif" />
+               </image>
+               <VBox.margin>
+                  <Insets left="80.0" />
+               </VBox.margin></ImageView>
+            <Label fx:id="nombrePokedex" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="425.0" text="Label" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font></Label>
+            <Text fx:id="informacion" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="JUSTIFY" wrappingWidth="391.73674392700195">
+               <VBox.margin>
+                  <Insets left="3.0" right="3.0" />
+               </VBox.margin>
+            </Text>
+            <HBox prefHeight="150.0" prefWidth="426.0">
+               <children>
+                  <ImageView fx:id="preEvo" fitHeight="150.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../kotlin/com/example/poke/Pokemones/groudon.gif" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></ImageView>
+                  <ImageView fx:id="flecha" fitHeight="115.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../kotlin/com/example/poke/Pokemones/next.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="50.0" />
+                     </HBox.margin></ImageView>
+                  <ImageView fx:id="Evo" fitHeight="150.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../kotlin/com/example/poke/Pokemones/swampert.gif" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></ImageView>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Label fx:id="favorito" layoutX="14.0" layoutY="448.0" onMouseClicked="#favoritoClick" style="-fx-effect: dropshadow(one-pass-box, #524659, 11, 1, 3, 0);" text="Favorito" textFill="#ffee03">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="salir" layoutX="333.0" layoutY="448.0" onMouseClicked="#salirClick" style="-fx-effect: dropshadow(one-pass-box, #524659, 11, 1, 3, 0);" text="Salir" textFill="#ff5151">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
