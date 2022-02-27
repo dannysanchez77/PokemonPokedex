@@ -73,6 +73,9 @@
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
                               </Label>
                               <ImageView fx:id="fav00" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
@@ -156,6 +159,9 @@
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
                               </Label>
                               <ImageView fx:id="fav10" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
@@ -239,6 +245,9 @@
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
                               </Label>
                               <ImageView fx:id="fav01" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
@@ -322,6 +331,9 @@
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
                               </Label>
                               <ImageView fx:id="fav11" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
@@ -405,6 +417,9 @@
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
                               </Label>
                               <ImageView fx:id="fav20" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>
@@ -488,6 +503,9 @@
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
+                                 <HBox.margin>
+                                    <Insets left="3.0" />
+                                 </HBox.margin>
                               </Label>
                               <ImageView fx:id="fav21" fitHeight="20.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                  <HBox.margin>

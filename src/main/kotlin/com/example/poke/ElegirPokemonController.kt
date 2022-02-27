@@ -308,8 +308,7 @@ class ElegirPokemonController {
         configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,fav01.visibleProperty().set(true),pokemonAmigo[3])
         configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,fav11.visibleProperty().set(true),pokemonAmigo[4])
         configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,fav21.visibleProperty().set(true),pokemonAmigo[5])
-        println("estrella")
-        println(fav00.visibleProperty())
+
     }
 
 
