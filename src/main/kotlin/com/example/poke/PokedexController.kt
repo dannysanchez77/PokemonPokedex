@@ -1,7 +1,6 @@
 package com.example.poke
 
 import javafx.fxml.FXML
-import javafx.scene.control.ButtonType
 import javafx.scene.control.Label
 import javafx.scene.image.Image
 import javafx.scene.image.ImageView
@@ -10,9 +9,11 @@ import javafx.stage.Stage
 import java.io.File
 import kotlin.system.exitProcess
 
+
+
 class PokedexController {
     var hacerFavoritos = ElegirPokemonController()
-lateinit var miPokedex : Pokemon
+    lateinit var miPokedex : Pokemon
 
     @FXML private lateinit var fondoPokedex : ImageView
     @FXML private lateinit var pokemonPokedex : ImageView
@@ -36,15 +37,21 @@ lateinit var miPokedex : Pokemon
         informacion.text = elegirLuchador.descripcion
         preEvo.image = Image(elegirLuchador.imagen.toURI().toString())
         Evo.image = Image(elegirLuchador.evolucion.toURI().toString())
-        estrella.image = Image(elegirLuchador.estrella.toURI().toString())
+        estrella.image = Image(elegirLuchador.fav.toURI().toString())
         miPokedex = elegirLuchador
     }
     @FXML private fun salirClick(){
-        exitProcess(0)
-
+        (( informacion.scene.window)as Stage).close()
+    }
+    fun hacerVisible() {
+        favorito.visibleProperty().set(true)
+        estrella.visibleProperty().set(true)
+        if (estrella.isVisible){
+            favorito.visibleProperty().set(true)
+        }
     }
     @FXML private fun favoritoClick(){
-      estrella.visibleProperty().set(true)
+        hacerVisible()
         hacerFavoritos.actualizarfavoritos()
     }
 

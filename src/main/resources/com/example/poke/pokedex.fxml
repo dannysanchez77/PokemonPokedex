@@ -19,18 +19,18 @@
       </ImageView>
       <VBox prefHeight="368.0" prefWidth="400.0">
          <children>
-            <ImageView fx:id="pokemonPokedex" fitHeight="200.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="pokemonPokedex" fitHeight="200.0" fitWidth="280.0" pickOnBounds="true">
                <image>
                   <Image url="@../../../../kotlin/com/example/poke/Pokemones/swampert.gif" />
                </image>
                <VBox.margin>
                   <Insets left="80.0" />
                </VBox.margin></ImageView>
-            <Label fx:id="nombrePokedex" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="425.0" text="Label" textAlignment="CENTER">
+            <Label fx:id="nombrePokedex" alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="425.0" text="nombre" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font></Label>
-            <Text fx:id="informacion" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="391.73674392700195">
+            <Text fx:id="informacion" strokeType="OUTSIDE" strokeWidth="0.0" text="descripcion" textAlignment="CENTER" wrappingWidth="391.73674392700195">
                <VBox.margin>
                   <Insets left="3.0" right="3.0" />
                </VBox.margin>

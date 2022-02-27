@@ -13,7 +13,7 @@ class Pokemon(var Nombre: String,
               var imagenEspalda: File,
               var descripcion: String,
               var evolucion: File,
-              var estrella : File)
+              var fav : File)
 {
     // CONFIGURAMOS LOS ATAQUES
     fun ataqueSeguro(pokemon: Pokemon){

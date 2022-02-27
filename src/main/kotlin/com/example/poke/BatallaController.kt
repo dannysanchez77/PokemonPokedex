@@ -70,7 +70,7 @@ class BatallaController {
 
         "",
         File(""),
-        File(""))
+        File(""),)
     // FONDO
     @FXML private lateinit var fondoBatalla: ImageView
 

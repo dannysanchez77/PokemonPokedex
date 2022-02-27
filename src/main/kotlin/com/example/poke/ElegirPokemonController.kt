@@ -158,16 +158,15 @@ class ElegirPokemonController {
     }
     fun configurarPoke(
         nombre: Label, nivel:Label, imagen: ImageView, genero:ImageView, vida:ProgressBar, ps:Label,
-        favorito: Unit, poke:Pokemon,  ){
+         favorito: ImageView ,poke:Pokemon,  ){
         nombre.text=poke.Nombre
         nivel.text="Nv "+poke.Nv
         imagen.image = Image(poke.imagen.toURI().toString())
         genero.image= Image(poke.genero.toURI().toString())
         vida.progress = calcularBarraVida(poke)
         ps.text=poke.vidaActual.toString()+'/'+poke.vidaMaxima
-       favorito.toString()
+        favorito.image= Image(poke.fav.toURI().toString())
         imagen.image = Image(poke.imagen.toURI().toString())
-
     }
 
     fun fondoPokeElegido(nombre: Label,Nv:Label,Ps:Label,pokemon: BorderPane){
@@ -197,13 +196,19 @@ class ElegirPokemonController {
 
         elegir.disableProperty().set(true)
 
+        fav00.visibleProperty().set(false)
+        fav10.visibleProperty().set(false)
+        fav20.visibleProperty().set(false)
+        fav01.visibleProperty().set(false)
+        fav11.visibleProperty().set(false)
+        fav21.visibleProperty().set(false)
 
-        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,fav00.visibleProperty().set(false),pokemonAmigo[0])
-        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,fav10.visibleProperty().set(false),pokemonAmigo[1])
-        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,fav20.visibleProperty().set(false),pokemonAmigo[2])
-        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,fav01.visibleProperty().set(false),pokemonAmigo[3])
-        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,fav11.visibleProperty().set(false),pokemonAmigo[4])
-        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,fav21.visibleProperty().set(false),pokemonAmigo[5])
+        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,fav00,pokemonAmigo[0])
+        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,fav10,pokemonAmigo[1])
+        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,fav20,pokemonAmigo[2])
+        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,fav01,pokemonAmigo[3])
+        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,fav11,pokemonAmigo[4])
+        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,fav21,pokemonAmigo[5])
 
 
 
@@ -279,7 +284,7 @@ class ElegirPokemonController {
                 val stage = Stage()
                 val loader = FXMLLoader(PokeApplication::class.java.getResource("escena2.fxml"))
                 val scene = Scene(loader.load(), 700.0, 500.0)
-                stage.title = "Pokemon"
+                stage.title = "Batalla Pokemon"
                 stage.scene = scene
                 stage.isResizable = false
                 stage.show()
@@ -294,31 +299,42 @@ class ElegirPokemonController {
     }
     // FUNCION PARA PODER ACTUALIZAR LOS DATOS OBTENIDOS DE LA BATALLA
     fun actualizarDatos() {
-        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,fav00.visibleProperty().set(false),pokemonAmigo[0])
-        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,fav10.visibleProperty().set(false),pokemonAmigo[1])
-        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,fav20.visibleProperty().set(false),pokemonAmigo[2])
-        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,fav01.visibleProperty().set(false),pokemonAmigo[3])
-        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,fav11.visibleProperty().set(false),pokemonAmigo[4])
-        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,fav21.visibleProperty().set(false),pokemonAmigo[5])
+        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,fav00,pokemonAmigo[0])
+        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,fav10,pokemonAmigo[1])
+        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,fav20,pokemonAmigo[2])
+        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,fav01,pokemonAmigo[3])
+        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,fav11,pokemonAmigo[4])
+        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,fav21,pokemonAmigo[5])
     }
     fun actualizarfavoritos() {
-        configurarPoke(Nombre00,Nv00,foto00,genero00,vida00,Ps00,fav00.visibleProperty().set(true),pokemonAmigo[0])
-        configurarPoke(Nombre10,Nv10,foto10,genero10,vida10,Ps10,fav10.visibleProperty().set(true),pokemonAmigo[1])
-        configurarPoke(Nombre20,Nv20,foto20,genero20,vida20,Ps20,fav20.visibleProperty().set(true),pokemonAmigo[2])
-        configurarPoke(Nombre01,Nv01,foto01,genero01,vida01,Ps01,fav01.visibleProperty().set(true),pokemonAmigo[3])
-        configurarPoke(Nombre11,Nv11,foto11,genero11,vida11,Ps11,fav11.visibleProperty().set(true),pokemonAmigo[4])
-        configurarPoke(Nombre21,Nv21,foto21,genero21,vida21,Ps21,fav21.visibleProperty().set(true),pokemonAmigo[5])
-
+        if (elegirLuchador == pokemonAmigo1){
+            fav00.visibleProperty().set(true)
+        }
+        if (elegirLuchador == pokemonAmigo2){
+            fav10.visibleProperty().set(true)
+        }
+        if (elegirLuchador == pokemonAmigo3){
+            fav20.visibleProperty().set(true)
+        }
+        if (elegirLuchador == pokemonAmigo4){
+            fav01.visibleProperty().set(true)
+        }
+        if (elegirLuchador == pokemonAmigo5){
+            fav11.visibleProperty().set(true)
+        }
+        if (elegirLuchador == pokemonAmigo6){
+            fav21.visibleProperty().set(true)
+        }
     }
 
-
+    var stage2: Stage? = null
     fun pokedexClick() {
         try {
-            if (stage == null) {
+            if (stage2 == null) {
                 val stage = Stage()
                 val loader = FXMLLoader(PokeApplication::class.java.getResource("pokedex.fxml"))
                 val scene = Scene(loader.load(), 400.0, 500.0)
-                stage.title = "Pokemon"
+                stage.title = "Pokedex"
                 stage.scene = scene
                 stage.isResizable = false
                 stage.show()
