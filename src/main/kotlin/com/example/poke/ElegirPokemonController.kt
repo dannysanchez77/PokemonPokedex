@@ -341,6 +341,7 @@ class ElegirPokemonController {
                 var controllerPokedex = loader.getController<PokedexController>()
                 controllerPokedex.traerEleccion(elegirLuchador)
                 controllerPokedex.hacerFavoritos(this)
+
             }
         } catch (e: IOException) {
             e.printStackTrace()

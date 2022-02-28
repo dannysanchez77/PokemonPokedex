@@ -46,9 +46,7 @@ class PokedexController {
     fun hacerVisible() {
         favorito.visibleProperty().set(true)
         estrella.visibleProperty().set(true)
-        if (estrella.isVisible){
-            favorito.visibleProperty().set(true)
-        }
+
     }
     @FXML private fun favoritoClick(){
         hacerVisible()
