@@ -329,7 +329,7 @@ class ElegirPokemonController {
 
 
     var stage2: Stage? = null
-    fun pokedexClick() {
+    @FXML   fun pokedexClick() {
         try {
             if (stage2 == null) {
                 val stage = Stage()
@@ -341,7 +341,7 @@ class ElegirPokemonController {
                 stage.show()
                 var controllerPokedex = loader.getController<PokedexController>()
                 controllerPokedex.traerEleccion(elegirLuchador)
-                controllerPokedex.hacerFavoritos(this)
+                controllerPokedex.llamarControladorElegir(this)
 
             }
         } catch (e: IOException) {

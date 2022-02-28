@@ -52,8 +52,7 @@ class PokedexController {
         hacerVisible()
         hacerFavoritos.actualizarfavoritos()
     }
-
-    fun hacerFavoritos( controlador: ElegirPokemonController){
+    fun llamarControladorElegir( controlador: ElegirPokemonController){
         this.hacerFavoritos=controlador
     }
 
