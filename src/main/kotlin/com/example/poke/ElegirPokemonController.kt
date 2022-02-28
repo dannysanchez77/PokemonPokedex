@@ -327,6 +327,7 @@ class ElegirPokemonController {
         }
     }
 
+
     var stage2: Stage? = null
     fun pokedexClick() {
         try {

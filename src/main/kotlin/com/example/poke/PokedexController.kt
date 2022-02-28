@@ -56,6 +56,7 @@ class PokedexController {
     fun hacerFavoritos( controlador: ElegirPokemonController){
         this.hacerFavoritos=controlador
     }
+
 }
 
 

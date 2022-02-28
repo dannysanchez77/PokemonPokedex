@@ -110,7 +110,7 @@ class BatallaController {
         this.controlador=controlador
     }
     fun initialize() {
-// INICIALIZAMOS LOS POKEMON RIVALES
+        // INICIALIZAMOS LOS POKEMON RIVALES
         posiblesPokemonRivales.add(pokemonRival1)
         posiblesPokemonRivales.add(pokemonRival2)
         posiblesPokemonRivales.add(pokemonRival3)
@@ -118,7 +118,7 @@ class BatallaController {
 
         // HACEMOS INVISIBLE LA CAJA DE ATAQUES
         BoxAtaques.visibleProperty().set(false)
-// INICIAMOS LA IMAGEN DE FONDO
+        // INICIAMOS LA IMAGEN DE FONDO
         fondoBatalla.image= Image(File("src\\main\\kotlin\\com\\example\\poke\\Pokemones\\fondoBatalla.png").toURI().toString())
 
         //CREAMOS EL POKEMON RIVAL
